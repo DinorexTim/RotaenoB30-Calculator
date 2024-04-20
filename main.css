@@ -1,0 +1,243 @@
+html body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 800px;
+}
+
+.container{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/main/rotaeno.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.logo{
+    left: 10px;
+    top: 10px;
+    position: absolute;
+    width: 400px;
+    height: 116px;
+    z-index: 999;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.avatar{
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.ratingList{
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    width: 260px;
+    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 9999;
+    transform: translate(-50%, 0%)
+}
+
+.ratingList h3,h4{
+    color: white;
+    margin: 0px;
+    display: inline-block;
+}
+
+.blank{
+    height: 70px;
+}
+
+.subcontainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.songlist{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 640px;
+    width: 640px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.unit{
+    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
+    width: 90%;
+    display: flex;
+    padding: 10px;
+    color: white;
+    border-radius: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: ease width 0.008s;
+    min-width: 320px;
+}
+
+.songName{
+    padding: 5px;
+    border-radius: 15px;
+    width: 190px;
+    overflow-x: hidden;
+    font-weight: bold;
+    white-space:nowrap;
+}
+
+.songArtist{
+    width: 100px;
+    font-weight: bold;
+    overflow-x: hidden;
+    white-space:nowrap;
+}
+
+.ratingClass{
+    width: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold;
+}
+
+.ratingReal{
+    width: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: bold
+}
+
+.btn{
+    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 8px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+input{
+    background-color: azure;
+    border-radius: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.songlist::-webkit-scrollbar {
+    width: 5px;
+}
+
+.spinner {
+    /* Size */
+    height: 4rem;
+    width: 4rem;
+
+    margin: auto;
+    margin-top: 120px;
+    border: 8px solid #d1d5db;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+
+
+    animation: spinner 800ms linear infinite;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.optionbar{
+    display: flex;
+    position: absolute;
+    z-index: 6666;
+    right: 0px;
+    flex-direction: column;
+} 
+
+.blocklist{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    height: 590px;
+    overflow-y: scroll;
+    align-content: stretch;
+}
+
+.block{
+    border-radius: 15px;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    color: white;
+    padding: 5px;
+    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
+    margin: 0px;
+}
+
+.cover_rating{
+    margin-top: -20px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.cover_rating img{
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+}
+
+.rating{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 72%;
+}
+
+.rating p{
+    font-weight: bold;
+    margin: 0px;
+    margin-left: 2px;
+    padding: 3px;
+}
+
+.score{
+    font-size: 25px;
+    font-weight: normal;
+}

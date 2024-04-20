@@ -1,0 +1,20 @@
+{
+  "name": "rotaenob30",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js && open http://localhost:9876"
+  },
+  "keywords": [
+    "rtn",
+    "b30"
+  ],
+  "author": "Dinorex",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security"
+  }
+}
