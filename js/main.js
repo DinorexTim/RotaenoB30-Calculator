@@ -59,6 +59,9 @@ async function displayB30(){
         console.log(data.grade);
         // 按计算的单曲rating排序
         processSortord(data.grade);
+        const response2 = await fetch('./songs.json');
+        const datasong = await response2.json();
+        let songs=datasong.songs;
         for(let index=0;index<data.grade.length;index++){
             if(index==30){
                 break;
@@ -70,6 +73,8 @@ async function displayB30(){
             if(!data.grade[index].title){
                 break;
             }
+           
+            let songindex=songs.findIndex((item) => item.title_localized.default === data.grade[index].title);
             //添加成绩单元
             document.getElementById('blocklist').innerHTML+=`
             <div class="block">
@@ -77,7 +82,7 @@ async function displayB30(){
                     ${data.grade[index].title}
                 </div>
                 <div class="cover_rating">
-                    <img src="/images/song_covers/100px Songs_${data.grade[index].title}.png" alt="">
+                    <img src="/images/song_covers/100px Songs_${processTitle(songs[songindex].id)}.png" alt="">
                     <div class="rating">
                         <p class="score">${data.grade[index].score}</p>
                         <p>${data.grade[index].ratingReal}→${calcSingleRating(data.grade[index].ratingReal,data.grade[index].score).toFixed(3)}</p>
@@ -108,6 +113,12 @@ function checkScreenWidth() {
         document.getElementById('logo').style.display='block';
     }
 }  
+
+//处理歌曲标题
+function processTitle(title){
+    //删除“-”
+    return title.replace(/-/g," ")
+}
 
 checkScreenWidth();
 window.addEventListener('resize', checkScreenWidth);

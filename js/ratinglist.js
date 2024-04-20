@@ -10,11 +10,11 @@ async function getSongInfo(sortord=0){
         let songs=data.songs;
         processSortord(sortord,songs);
         for(let index =0;index<songs.length;index++){
-            let songindex=dataUser.info.findIndex(item => item.title === processTitle(songs[index].id) && item.ratingClass === 3);
+            let songindex=dataUser.info.findIndex(item => item.title === songs[index].title_localized.default && item.ratingClass === 3);
             if(songindex==-1){
                 songlist.innerHTML+=` 
                 <div class="unit">
-                    <div class="songName">${processTitle(songs[index].id)}</div>
+                    <div class="songName">${songs[index].title_localized.default}</div>
                     <div class="songArtist">${songs[index].artist}</div>
                     <div class="ratingClass">${transferRatingClass(songs[index].difficulties[3].ratingClass)}</div>
                     <div class="ratingReal">${songs[index].difficulties[3].ratingReal}</div>
@@ -23,7 +23,7 @@ async function getSongInfo(sortord=0){
             }else{
                 songlist.innerHTML+=` 
                 <div class="unit">
-                    <div class="songName">${processTitle(songs[index].id)}</div>
+                    <div class="songName">${songs[index].title_localized.default}</div>
                     <div class="songArtist">${songs[index].artist}</div>
                     <div class="ratingClass">${transferRatingClass(songs[index].difficulties[3].ratingClass)}</div>
                     <div class="ratingReal">${songs[index].difficulties[3].ratingReal}</div>
