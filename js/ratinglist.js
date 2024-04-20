@@ -18,7 +18,7 @@ async function getSongInfo(sortord=0){
                     <div class="songArtist">${songs[index].artist}</div>
                     <div class="ratingClass">${transferRatingClass(songs[index].difficulties[3].ratingClass)}</div>
                     <div class="ratingReal">${songs[index].difficulties[3].ratingReal}</div>
-                    <div class="score"><input type="number" min="0" max="10010000"></div>
+                    <div class="score"><input  class='input' type="number" min="0" max="10010000"></div>
                 </div>`;
             }else{
                 songlist.innerHTML+=` 
@@ -27,7 +27,7 @@ async function getSongInfo(sortord=0){
                     <div class="songArtist">${songs[index].artist}</div>
                     <div class="ratingClass">${transferRatingClass(songs[index].difficulties[3].ratingClass)}</div>
                     <div class="ratingReal">${songs[index].difficulties[3].ratingReal}</div>
-                    <div class="score"><input type="number" min="0" max="10010000" value=${dataUser.info[songindex].score}></div>
+                    <div class="score"><input class='input' type="number" min="0" max="10010000" value=${dataUser.info[songindex].score}></div>
                 </div>`;
             }
         }
@@ -54,6 +54,32 @@ async function getSongInfo(sortord=0){
                 })
             });
         });
+        const inputs = document.querySelectorAll('.input');
+        let currentIndex = 0;
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                currentIndex = (currentIndex - 1 + inputs.length) % inputs.length;
+                focusInput(currentIndex);
+                songlist.scrollTop-=50;
+            } else if (event.key === 'ArrowDown' || event.key === 'Enter') {
+                event.preventDefault();
+                currentIndex = (currentIndex + 1) % inputs.length;
+                focusInput(currentIndex);
+                songlist.scrollTop+=50;
+            }
+        });
+
+        function focusInput(index) {
+            inputs.forEach((input, i) => {
+                if (i === index) {
+                    input.focus();
+                } else {
+                    input.blur();
+                }
+            });
+        }
     }catch(error){
         console.error('Error reading JSON file:', error);      
     }
