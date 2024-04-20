@@ -260,7 +260,7 @@ footer{
     width: 100%;
     font-weight:bold;
     position: absolute;
-    bottom:0px;
+    bottom:-20px;
     color:white;
     background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255));
 }
