@@ -4,6 +4,7 @@ html body{
     margin: 0;
     padding: 0;
     min-width: 800px;
+    min-height: 650px;
 }
 
 .container{
@@ -216,7 +217,7 @@ input{
     color: white;
     padding: 5px;
     background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
-    margin: 0px;
+    margin: 4px;
 }
 
 .cover_rating{
