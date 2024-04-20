@@ -1,6 +1,6 @@
 const songlist = document.getElementById('songlist');
 
-async function getSongInfo(sortord=0){
+async function getSongInfo(sortord){
     try{
         const response = await fetch('./songs.json');
         const responseUser = await fetch('./userdata.json');
@@ -9,9 +9,10 @@ async function getSongInfo(sortord=0){
         console.log(data);
         let songs=data.songs;
         processSortord(sortord,songs);
+        document.querySelector(".spinner").remove();
         for(let index =0;index<songs.length;index++){
             let songindex=dataUser.info.findIndex(item => item.title === songs[index].title_localized.default && item.ratingClass === 3);
-            if(songindex==-1){
+            if(songindex==-1 || dataUser.info[songindex].score == null){
                 songlist.innerHTML+=` 
                 <div class="unit">
                     <div class="songName">${songs[index].title_localized.default}</div>
@@ -32,7 +33,6 @@ async function getSongInfo(sortord=0){
             }
         }
         songlist.innerHTML+="<br><br><br><br><br>";
-        document.querySelector(".spinner").remove();
         songlist.scrollHeight=200;
         adjustScrollContentWidth();
         const contents = document.querySelectorAll('.unit');
@@ -96,19 +96,13 @@ function processSortord(sortord,songlist){
         }
         case 1:{
             songlist.sort((a,b)=>{
-                return b.difficulties[3].ratingReal-a.difficulties[3].ratingReal;
+                return a.title_localized.default.localeCompare(b.title_localized.default);
             });
             break;
         }
         case 2:{
             songlist.sort((a,b)=>{
-                return b.difficulties[3].ratingReal-a.difficulties[3].ratingReal;
-            });
-            break;
-        }
-        case 3:{
-            songlist.sort((a,b)=>{
-                return b.difficulties[3].ratingReal-a.difficulties[3].ratingReal;
+                return a.artist.localeCompare(b.artist);
             });
             break;
         }
@@ -162,6 +156,19 @@ function adjustScrollContentWidth() {
 //监测调整歌曲条宽度
 document.getElementById('songlist').addEventListener('scroll',adjustScrollContentWidth);
 
+document.getElementById('sortLevel').addEventListener('click',()=>{
+    songlist.innerHTML=`<br><br><br><br><br><br><div class="spinner"></div>`;
+    getSongInfo(0);
+});
+document.getElementById('sortName').addEventListener('click',()=>{
+    songlist.innerHTML=`<br><br><br><br><br><br><div class="spinner"></div>`;
+    getSongInfo(1);
+});
+document.getElementById('sortArtist').addEventListener('click',()=>{
+    songlist.innerHTML=`<br><br><br><br><br><br><div class="spinner"></div>`;
+    getSongInfo(2);
+});
+
 window.onload=async()=>{
-    getSongInfo();
+    getSongInfo(0);
 }
