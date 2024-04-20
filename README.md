@@ -26,3 +26,4 @@ A simple best30 calculator for Rotaeno
 ## Update rating list
 
 - Data sources: [https://wiki.rotaeno.cn/index.php?title=Template:Songlist.json&action=edit](https://wiki.rotaeno.cn/index.php?title=Template:Songlist.json&action=edit)
+- To update, just paste [source code](https://wiki.rotaeno.cn/index.php?title=Template:Songlist.json&action=edit) on `songs.json` and relaunch the server
