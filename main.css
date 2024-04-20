@@ -254,3 +254,13 @@ input{
     font-size: 25px;
     font-weight: normal;
 }
+
+footer{
+    color: white;
+    width: 100%;
+    font-weight:bold;
+    position: absolute;
+    bottom:0px;
+    color:white;
+    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255));
+}
