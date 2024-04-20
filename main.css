@@ -13,6 +13,8 @@ html body{
     background-image: url(./images/main/rotaeno.png);
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo{
