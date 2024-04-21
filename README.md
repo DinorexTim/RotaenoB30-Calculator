@@ -2,7 +2,7 @@
 
 A simple best30 calculator for Rotaeno
 <div  align="center">    
-    <img src="./images/demo.gif" width = "360" height = "190">
+    <img src="./images/demo.gif" width = "60%" height = "calc(0.6*width)">
 </div>
 
 ## Screenshots
