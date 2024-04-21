@@ -27,3 +27,7 @@ A simple best30 calculator for Rotaeno
 
 - Data sources: [https://wiki.rotaeno.cn/index.php?title=Template:Songlist.json&action=edit](https://wiki.rotaeno.cn/index.php?title=Template:Songlist.json&action=edit)
 - To update, just paste [source code](https://wiki.rotaeno.cn/index.php?title=Template:Songlist.json&action=edit) on `songs.json` and relaunch the server
+
+## Disclaimer
+
+- Images in this projetct are from the Internet, only for developers to learn, share and exchange use and not for other purposes. All copyright of the original publisher.

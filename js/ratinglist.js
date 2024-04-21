@@ -62,12 +62,12 @@ async function getSongInfo(sortord){
                 event.preventDefault();
                 currentIndex = (currentIndex - 1 + inputs.length) % inputs.length;
                 focusInput(currentIndex);
-                songlist.scrollTop-=50;
+                songlist.scrollTop-=52.5;
             } else if (event.key === 'ArrowDown' || event.key === 'Enter') {
                 event.preventDefault();
                 currentIndex = (currentIndex + 1) % inputs.length;
                 focusInput(currentIndex);
-                songlist.scrollTop+=50;
+                songlist.scrollTop+=52.5;
             }
         });
 

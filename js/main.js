@@ -122,7 +122,8 @@ function processTitle(title){
 
 document.getElementById('avatar_show').addEventListener('click',async ()=>{
     if(document.querySelector('.avatarlist').style.display=='none' || document.querySelector('.avatarlist').style.display == ''){
-        document.querySelector('.avatarlist').style.display='flex';   
+        document.querySelector('.avatarlist').style.display='flex'; 
+        document.querySelector('.avatarlist').innerHTML='<div class="spinner"></div>';
         const response = await fetch('/getAvatars',{
             method:"POST"
         });
@@ -132,6 +133,7 @@ document.getElementById('avatar_show').addEventListener('click',async ()=>{
             <img class="avatar avalist" alt="" src="./images/avatars/${data.avatars[index]}">
         `;
         }
+        document.querySelector(".spinner").remove();
         document.querySelectorAll('.avalist').forEach(Element=>{
             Element.addEventListener('click',()=>{
                 document.getElementById('avatar_show').innerHTML=`<img src='${Element.getAttribute('src')}'>`;
