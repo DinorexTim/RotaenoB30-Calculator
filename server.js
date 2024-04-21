@@ -28,7 +28,7 @@ app.get('/:folder/:folder2/:filename', (req,res)=>{
     res.sendFile(__dirname+`/${req.params.folder}/${req.params.folder2}/${req.params.filename}`);
 });
 app.post('/updateScore',(req,res)=>{
-    body="";
+    let body="";
     req.on('data',(chunk)=>{
         body+=chunk.toString();
     });
@@ -77,7 +77,7 @@ app.post('/updateScore',(req,res)=>{
     });
 });
 app.post('/getb30',(req,res)=>{
-    body="";
+    let body="";
     req.on('data',(chunk)=>{
         body+=chunk.toString();
     });
@@ -94,3 +94,23 @@ app.post('/getb30',(req,res)=>{
         }
     });
 });
+
+app.post('/getAvatars',(req,res)=>{
+    let body="";
+    req.on('data',(chunk)=>{
+        body+=chunk.toString();
+    });
+    req.on('end',()=>{
+        const folderPath = './images/avatars';
+        fs.readdir(folderPath, (err, files) => {
+            if (err) {
+                console.error('Error reading folder:', err);
+                return;
+            }
+            console.log(files)
+            res.json({
+                "avatars":files
+            })
+        });
+    });
+})

@@ -120,10 +120,39 @@ function processTitle(title){
     return title.replace(/-/g," ")
 }
 
+document.getElementById('avatar_show').addEventListener('click',async ()=>{
+    if(document.querySelector('.avatarlist').style.display=='none' || document.querySelector('.avatarlist').style.display == ''){
+        document.querySelector('.avatarlist').style.display='flex';   
+        const response = await fetch('/getAvatars',{
+            method:"POST"
+        });
+        const data = await response.json();
+        for(let index=0 ; index < data.avatars.length; index++){
+            document.querySelector('.avatarlist').innerHTML+=`
+            <img class="avatar avalist" alt="" src="./images/avatars/${data.avatars[index]}">
+        `;
+        }
+        document.querySelectorAll('.avalist').forEach(Element=>{
+            Element.addEventListener('click',()=>{
+                document.getElementById('avatar_show').innerHTML=`<img src='${Element.getAttribute('src')}'>`;
+                localStorage.setItem('avatar_src',Element.getAttribute('src'))
+                document.querySelector('.avatarlist').style.display='none';
+                document.querySelector('.avatarlist').innerHTML='';
+            });
+        });
+    }else{
+        document.querySelector('.avatarlist').style.display='none';
+        document.querySelector('.avatarlist').innerHTML='';
+    }
+});
+
 checkScreenWidth();
 window.addEventListener('resize', checkScreenWidth);
   
 
 window.onload=async()=>{
     displayB30();
+    if(localStorage.getItem('avatar_src')!=null){
+        document.getElementById('avatar_show').innerHTML=`<img src='${localStorage.getItem('avatar_src')}'>`;
+    }
 }

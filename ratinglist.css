@@ -3,6 +3,8 @@ html body{
     width: 100%;
     margin: 0;
     padding: 0;
+    min-width: 800px;
+    min-height: 650px;
 }
 
 .container{
@@ -188,107 +190,7 @@ input{
     flex-direction: column;
 } 
 
-.blocklist{
-    display: flex;
-    flex: 1;
-    justify-content: space-evenly;
-    width: 100%;
-    /* height: 590px; */
-    overflow-y: scroll;
-    align-content: stretch;
-}
-
-.subblocklist{
-    display: flex;
-    flex-direction: row;
-    max-width: 1400px;
-    width: 100%;
-    height: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.block{
-    border-radius: 15px;
-    width: 200px;
-    height: 100px;
-    margin: 10px;
-    color: white;
-    padding: 5px;
-    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
-    margin: 4px;
-}
-
-.cover_rating{
-    margin-top: -20px;
-    display: flex;
-    height: 100%;
-    align-items: center;
-}
-
-.cover_rating img{
-    width: 50px;
-    height: 50px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 15px;
-}
-
-.rating{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 72%;
-}
-
-.rating p{
-    font-weight: bold;
-    margin: 0px;
-    margin-left: 2px;
-    padding: 3px;
-}
-
 .score{
     font-size: 25px;
     font-weight: normal;
-}
-
-footer{
-    color: white;
-    width: 100%;
-    font-weight:bold;
-    position: absolute;
-    bottom:-23px;
-    color:white;
-    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255));
-}
-
-.avatarlist{
-    display: none;
-    flex-wrap: wrap;
-    position: absolute;
-    top: 100px;
-    width: 245px;
-    height: 200px;
-    background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
-    z-index: 667;
-    border-radius: 10px;
-    padding: 10px;
-    overflow-y: scroll;
-    justify-content: space-between;
-}
-
-.avatar{
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: transform 0.2s ease;
-    border: 3px solid white;
-}
-
-.avatar:hover{
-    transform: scale(1.1);
 }
