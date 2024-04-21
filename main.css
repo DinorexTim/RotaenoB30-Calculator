@@ -285,7 +285,7 @@ footer{
     height: 55px;
     cursor: pointer;
     margin-bottom: 5px;
-    margin-bottom: 5px;
+    margin-top: 5px;
     transition: transform 0.2s ease;
     border: 3px solid white;
 }
