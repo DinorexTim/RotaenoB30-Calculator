@@ -51,6 +51,7 @@ function calcMaxRating(b30,best1){
 
 async function displayB30(){
     try{
+        document.getElementById('blocklist').innerHTML='<div class="spinner"></div>';
         const response = await fetch('/getb30',{
             method:"POST"
         });
@@ -61,6 +62,7 @@ async function displayB30(){
         processSortord(data.grade);
         const response2 = await fetch('./songs.json');
         const datasong = await response2.json();
+        document.querySelector('.spinner').remove();
         let songs=datasong.songs;
         for(let index=0;index<data.grade.length;index++){
             if(index==30){
