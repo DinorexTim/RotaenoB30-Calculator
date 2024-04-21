@@ -2,6 +2,10 @@
 
 A simple best30 calculator for Rotaeno
 
+![img](./images/demo.gif)
+
+## Screenshots
+
 ![img](./images/screenshot1.png)
 ![img](./images/screenshot2.png)
 
