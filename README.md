@@ -1,8 +1,9 @@
 # Rotaeno B30 Calculator
 
 A simple best30 calculator for Rotaeno
-
-![img](./images/demo.gif)
+<div  align="center">    
+    <img src="./images/demo.gif" width = "360" height = "190">
+</div>
 
 ## Screenshots
 
