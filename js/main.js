@@ -95,6 +95,7 @@ async function displayB30(){
         document.getElementById('userB30').innerText=`${calcB30(data.grade)}`;
         document.getElementById('userR10').innerText=await calcR10(calcB30(data.grade));
         document.getElementById('userMaxRating').innerText=`${calcMaxRating(calcB30(data.grade),best1)}`;
+        document.getElementById('userRating').innerText=`${parseFloat(data.userRating).toFixed(3)}`;
     }catch(error){
         console.error(error);
     }
@@ -109,7 +110,7 @@ function processSortord(songlist){
 //检查屏幕宽度
 function checkScreenWidth() {
     var screenWidth = window.innerWidth || document.documentElement.clientWidth;
-    if (screenWidth < 1120) {
+    if (screenWidth < 1160) {
         document.getElementById('logo').style.display='none';
     }else{
         document.getElementById('logo').style.display='block';
@@ -149,6 +150,29 @@ document.getElementById('avatar_show').addEventListener('click',async ()=>{
         document.querySelector('.avatarlist').innerHTML='';
     }
 });
+
+document.addEventListener('keydown',(event)=>{
+    if(event.key=='Enter'){
+        event.preventDefault();
+        const userRating=document.getElementById('userRating');
+        userRating.blur();
+        userRating.innerText=`${parseFloat(userRating.innerText).toFixed(3)}`;
+        fetch('/changeRating',{
+            method:'POST',
+            body:JSON.stringify({
+                "rating":parseFloat(userRating.innerText)
+            })
+        })
+        .then((response)=>response.json())
+        .then((data)=>{
+            if(data.code==0){
+                window.location.reload();
+            }else{
+                alert("Oops! Something went wrong...");
+            }
+        });
+    }
+})
 
 checkScreenWidth();
 window.addEventListener('resize', checkScreenWidth);

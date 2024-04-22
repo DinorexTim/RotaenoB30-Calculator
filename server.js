@@ -47,11 +47,11 @@ app.post('/updateScore',(req,res)=>{
                 if (indexToUpdate !== -1) {
                     jsonData.info[indexToUpdate].score = parseFloat(body.score);
                     fs.writeFile('./userdata.json', JSON.stringify(jsonData, null, 2), 'utf8', (err) => {
-                    if (err) {
-                        console.error('写入文件时出错:', err);
-                        return;
-                    }
-                    console.log('更新成功');
+                        if (err) {
+                            console.error('写入文件时出错:', err);
+                            return;
+                        }
+                        console.log('更新成功');
                     });
                 } else {
                     const newinfo = {
@@ -87,7 +87,9 @@ app.post('/getb30',(req,res)=>{
             const config = JSON.parse(data);
             console.log(config);
             res.json({
-                "grade":config.info
+                "username":config.name,
+                "grade":config.info,
+                "userRating":config.rating
             });
         } catch (err) {
             console.log(`Error reading file from disk: ${err}`);
@@ -107,10 +109,44 @@ app.post('/getAvatars',(req,res)=>{
                 console.error('Error reading folder:', err);
                 return;
             }
-            console.log(files)
             res.json({
                 "avatars":files
             })
         });
     });
 })
+
+app.post('/changeRating',(req,res)=>{
+    let body="";
+    req.on('data',(chunk)=>{
+        body+=chunk.toString();
+    });
+    req.on('end',()=>{
+        body=JSON.parse(body);
+        fs.readFile('./userdata.json', 'utf8', (err, data) => {
+            if (err) {
+              console.error('读取文件时出错:', err);
+              return;
+            }
+            try {
+                const jsonData = JSON.parse(data);
+                jsonData.rating = parseFloat(body.rating);
+                fs.writeFile('./userdata.json', JSON.stringify(jsonData, null, 2), 'utf8', (err) => {
+                    if (err) {
+                        console.error('写入文件时出错:', err);
+                        return;
+                    }
+                    console.log('Rating更新成功');
+                    res.json({
+                        "code":0
+                    });
+                });
+            }catch(err){
+                console.log(`Error reading file from disk: ${err}`);
+                res.json({
+                    "code":-1
+                });
+            }
+        });
+    });
+});

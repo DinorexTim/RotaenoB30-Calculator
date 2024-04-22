@@ -1,32 +1,28 @@
 # Rotaeno B30 Calculator
 
 A simple best30 calculator for Rotaeno
+<div  align="center">  
+<a href="./README_zh.md">简体中文</a>
+</div><br>
 <div  align="center">    
-    <img src="./images/demo.gif" width = "60%" height = "calc(0.6*width)">
+    <img src="./images/readme/demo.gif" width = "75%" height = "calc(0.6*width)">
 </div>
 
 ## Screenshots
 
-![img](./images/screenshot1.png)
-![img](./images/screenshot2.png)
+![img](./images/readme/shot1.png)
+![img](./images/readme/shot2.png)
 
-## Prerequisite
+## Prerequisite & Deployment
 
 1. Intsall [Node.js](https://nodejs.org)
-2. Edit `userdata.json`, please enter your actual rating in the `rating` field.
+2. Open PowerShell/Terminal, navigate to the current directory, and type `npm install` to install dependencies.
+3. Simply enter `npm start` in PowerShell/Terminal to start the server.
+4. Enter Your actual rating in the `http://localhost:9876/RotaenoB30.html`
 
-```json
-{
-    "name": "user",
-    "rating": 0.00,
-    "info": [
-  
-    ]
-}
-```
-
-3. Open PowerShell/Terminal, navigate to the current directory, and type `npm install` to install dependencies.
-4. Simply enter `npm start` in PowerShell/Terminal to start.
+<div  align="center">    
+    <img src="./images/readme/demo2.gif" width = "80%" height = "calc(0.6*width)">
+</div>
 
 ## Update rating list
 

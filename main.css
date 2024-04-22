@@ -46,7 +46,7 @@ html body{
     position: absolute;
     top: 25px;
     left: 50%;
-    width: 260px;
+    width: 320px;
     background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
     border-radius: 10px;
     padding: 10px;
@@ -61,6 +61,18 @@ html body{
     color: white;
     margin: 0px;
     display: inline-block;
+}
+
+.userRating{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.ratingList h2{
+    color: white;
+    margin: 0px;
 }
 
 .blank{
