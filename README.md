@@ -10,8 +10,13 @@ A simple best30 calculator for Rotaeno
 
 ## Screenshots
 
+<details>
+    <summary>Click to show</summary>
+
 ![img](./images/readme/shot1.png)
 ![img](./images/readme/shot2.png)
+
+</details>
 
 ## Prerequisite & Deployment
 
