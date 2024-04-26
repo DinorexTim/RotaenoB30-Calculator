@@ -10,8 +10,13 @@
 
 ## 查分图 & 填写表展示
 
+<details>
+    <summary>展示更多</summary>
+
 ![img](./images/readme/shot1.png)
 ![img](./images/readme/shot2.png)
+
+</details>
 
 ## 先决条件和部署
 
