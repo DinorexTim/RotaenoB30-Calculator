@@ -81,7 +81,7 @@ async function displayB30(){
             document.getElementById('blocklist').innerHTML+=`
             <div class="block">
                 <div class="songname">
-                    ${data.grade[index].title}
+                    #${index+1}&nbsp;${data.grade[index].title}
                 </div>
                 <div class="cover_rating">
                     <img src="/images/song_covers/100px Songs_${processTitle(songs[songindex].id)}.png" alt="">

@@ -251,14 +251,13 @@ input{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 72%;
+    height: 63%;
 }
 
 .rating p{
     font-weight: bold;
     margin: 0px;
-    margin-left: 2px;
-    padding: 3px;
+    margin-left: 6px;
 }
 
 .score{
