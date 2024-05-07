@@ -23,7 +23,7 @@
 1. 安装 [Node.js](https://nodejs.org)
 2. 打开 PowerShell/终端，导航到当前目录，然后输入`npm install`来安装依赖项。
 3. 在 PowerShell/终端中输入`npm start`来启动服务器。
-4. 在 `http://localhost:9876/RotaenoB30.html` 输入您的实际rating。
+4. 在 `http://localhost:9876` 输入您的实际rating。
 
 <div  align="center">    
     <img src="./images/readme/demo2.gif" width = "80%" height = "calc(0.6*width)">
