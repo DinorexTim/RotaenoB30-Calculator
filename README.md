@@ -23,7 +23,7 @@ A simple best30 calculator for Rotaeno
 1. Intsall [Node.js](https://nodejs.org)
 2. Open PowerShell/Terminal, navigate to the current directory, and type `npm install` to install dependencies.
 3. Simply enter `npm start` in PowerShell/Terminal to start the server.
-4. Enter Your actual rating in the `http://localhost:9876/RotaenoB30.html`
+4. Enter Your actual rating in the `http://localhost:9876`
 
 <div  align="center">    
     <img src="./images/readme/demo2.gif" width = "80%" height = "calc(0.6*width)">
