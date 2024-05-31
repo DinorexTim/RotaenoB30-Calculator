@@ -2,7 +2,7 @@
 
 这是一个简单的Rotaeno B30计算器
 
-**ps: Rotaeno 2.0版本剔除了R10机制（~~为一直刷银河战区的自己默哀~~）**
+**ps: Rotaeno 2.0版本剔除了R10机制，所以删除了R10计算机制，并将B30作为个人Rating展示（~~为一直刷银河战区的自己默哀~~）**
 
 <div  align="center">  
 <a href="./README.md">English version</a>
