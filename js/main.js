@@ -38,16 +38,16 @@ function calcB30(ratings){
 }
 
 //计算R10
-async function calcR10(b30){
-    const response = await fetch('./userdata.json');
-    const data = await response.json();
-    return (4*data.rating-3*b30).toFixed(3);
-}
+// async function calcR10(b30){
+//     const response = await fetch('./userdata.json');
+//     const data = await response.json();
+//     return (4*data.rating-3*b30).toFixed(3);
+// }
 
 //计算maxRating
-function calcMaxRating(b30,best1){
-    return (0.75*b30+0.25*best1).toFixed(3);
-}
+// function calcMaxRating(b30,best1){
+//     return (0.75*b30+0.25*best1).toFixed(3);
+// }
 
 async function displayB30(){
     try{
@@ -93,9 +93,9 @@ async function displayB30(){
             </div>`;
         }
         document.getElementById('userB30').innerText=`${calcB30(data.grade)}`;
-        document.getElementById('userR10').innerText=await calcR10(calcB30(data.grade));
-        document.getElementById('userMaxRating').innerText=`${calcMaxRating(calcB30(data.grade),best1)}`;
-        document.getElementById('userRating').innerText=`${parseFloat(data.userRating).toFixed(3)}`;
+        // document.getElementById('userR10').innerText=await calcR10(calcB30(data.grade));
+        // document.getElementById('userMaxRating').innerText=`${calcMaxRating(calcB30(data.grade),best1)}`;
+        // document.getElementById('userRating').innerText=`${parseFloat(data.userRating).toFixed(3)}`;
     }catch(error){
         console.error(error);
     }

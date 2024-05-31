@@ -46,7 +46,6 @@ html body{
     position: absolute;
     top: 25px;
     left: 50%;
-    width: 320px;
     background-image: linear-gradient(to bottom right, rgb(84, 175, 224), rgb(0, 106, 255)); 
     border-radius: 10px;
     padding: 10px;

@@ -1,6 +1,9 @@
 # Rotaeno B30计算器
 
 这是一个简单的Rotaeno B30计算器
+
+**ps: Rotaeno 2.0版本剔除了R10机制（~~为一直刷银河战区的自己默哀~~）**
+
 <div  align="center">  
 <a href="./README.md">English version</a>
 </div><br>
@@ -23,7 +26,7 @@
 1. 安装 [Node.js](https://nodejs.org)
 2. 打开 PowerShell/终端，导航到当前目录，然后输入`npm install`来安装依赖项。
 3. 在 PowerShell/终端中输入`npm start`来启动服务器。
-4. 在 `http://localhost:9876` 输入您的实际rating。
+4. 访问 `http://localhost:9876` 开始使用！
 
 <div  align="center">    
     <img src="./images/readme/demo2.gif" width = "80%" height = "calc(0.6*width)">
