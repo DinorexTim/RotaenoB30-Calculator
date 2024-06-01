@@ -87,7 +87,7 @@ app.post('/getb30',(req,res)=>{
             const config = JSON.parse(data);
             console.log(config);
             res.json({
-                "username":config.name,
+                "username":config.username,
                 "grade":config.info,
                 "userRating":config.rating
             });
@@ -116,7 +116,7 @@ app.post('/getAvatars',(req,res)=>{
     });
 })
 
-app.post('/changeRating',(req,res)=>{
+app.post('/changeUsername',(req,res)=>{
     let body="";
     req.on('data',(chunk)=>{
         body+=chunk.toString();
@@ -130,7 +130,7 @@ app.post('/changeRating',(req,res)=>{
             }
             try {
                 const jsonData = JSON.parse(data);
-                jsonData.rating = parseFloat(body.rating);
+                jsonData.username = body.username;
                 fs.writeFile('./userdata.json', JSON.stringify(jsonData, null, 2), 'utf8', (err) => {
                     if (err) {
                         console.error('写入文件时出错:', err);

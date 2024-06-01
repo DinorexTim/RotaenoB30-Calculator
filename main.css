@@ -67,6 +67,7 @@ html body{
     flex-direction: column;
     align-items: center;
     margin-right: 15px;
+    margin-left: 15px;
 }
 
 .ratingList h2{

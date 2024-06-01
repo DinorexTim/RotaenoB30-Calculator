@@ -93,6 +93,7 @@ async function displayB30(){
             </div>`;
         }
         document.getElementById('userB30').innerText=`${calcB30(data.grade)}`;
+        document.getElementById('username').innerText=data.username;
         // document.getElementById('userR10').innerText=await calcR10(calcB30(data.grade));
         // document.getElementById('userMaxRating').innerText=`${calcMaxRating(calcB30(data.grade),best1)}`;
         // document.getElementById('userRating').innerText=`${parseFloat(data.userRating).toFixed(3)}`;
@@ -154,13 +155,12 @@ document.getElementById('avatar_show').addEventListener('click',async ()=>{
 document.addEventListener('keydown',(event)=>{
     if(event.key=='Enter'){
         event.preventDefault();
-        const userRating=document.getElementById('userRating');
-        userRating.blur();
-        userRating.innerText=`${parseFloat(userRating.innerText).toFixed(3)}`;
-        fetch('/changeRating',{
+        const username=document.getElementById('username');
+        username.blur();
+        fetch('/changeUsername',{
             method:'POST',
             body:JSON.stringify({
-                "rating":parseFloat(userRating.innerText)
+                "username":username.innerText
             })
         })
         .then((response)=>response.json())
